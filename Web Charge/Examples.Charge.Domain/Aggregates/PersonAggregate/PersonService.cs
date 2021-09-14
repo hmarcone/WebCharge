@@ -1,4 +1,5 @@
 ﻿using Examples.Charge.Domain.Aggregates.PersonAggregate.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,5 +16,17 @@ namespace Examples.Charge.Domain.Aggregates.PersonAggregate
         }
 
         public async Task<List<Person>> FindAllAsync() => (await _personRepository.FindAllAsync()).ToList();
+
+        public async Task<Person> FindByIdAsync(int id)
+        {
+            try
+            {
+                return await _personRepository.FindByIdAsync(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
