@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Examples.Charge.Domain.Aggregates.PersonAggregate.Interfaces
 {
     public interface IPhoneNumberTypeRepository
     {
-        Task<IEnumerable<PersonAggregate.PhoneNumberType>> FindAllAsync();
+        Task<IEnumerable<PhoneNumberType>> FindAllAsync();
+        Task<PhoneNumberType> FindByIdAsync(int id);
     }
 }

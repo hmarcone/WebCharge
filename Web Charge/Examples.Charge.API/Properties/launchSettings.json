@@ -20,7 +20,8 @@
     "Credit.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      //"launchUrl": "api/values",
+      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5000"
     },
     "Docker": {

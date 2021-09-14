@@ -21,6 +21,5 @@ namespace Examples.Charge.API.Controllers
 
         [HttpGet("{id}")]
         public async Task<ActionResult<PersonResponse>> Get(int id) => Response(await _personFacade.FindByIdAsync(id));
-
     }
 }
