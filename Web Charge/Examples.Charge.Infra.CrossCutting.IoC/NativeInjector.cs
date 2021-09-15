@@ -5,10 +5,10 @@ using Examples.Charge.Application.Dtos;
 using Examples.Charge.Application.Facade;
 using Examples.Charge.Application.Interfaces;
 using Examples.Charge.Domain.Aggregates.ExampleAggregate;
-using Examples.Charge.Domain.Aggregates.ExampleAggregate.Interfaces;
 using Examples.Charge.Domain.Aggregates.PersonAggregate;
-using Examples.Charge.Domain.Aggregates.PersonAggregate.Interfaces;
 using Examples.Charge.Infra.Data.Repositories;
+using Examples.Charge.Domain.Aggregates.PersonAggregate.Interfaces;
+using Examples.Charge.Domain.Aggregates.ExampleAggregate.Interfaces;
 
 namespace Examples.Charge.Infra.CrossCutting.IoC
 {
@@ -35,7 +35,8 @@ namespace Examples.Charge.Infra.CrossCutting.IoC
             services.AddScoped<IPersonPhoneFacade, PersonPhoneFacade>();
             services.AddScoped<IPersonPhoneService, PersonPhoneService>();
             services.AddScoped<IPersonPhoneRepository, PersonPhoneRepository>();
-            
+
+            services.AddScoped<IPhoneNumberTypeFacade, PhoneNumberTypeFacade>();
             services.AddScoped<IPhoneNumberTypeService, PhoneNumberTypeService>();
             services.AddScoped<IPhoneNumberTypeRepository, PhoneNumberTypeRepository>();
         }
