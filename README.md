@@ -8,7 +8,7 @@ Este é um projeto de CRUD simples de uma lista de contatos.
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - Angular 6.1
-- AspNet 2.2 - netcoreapp2.2
+- [Microsoft.AspNetCore.App 2.2.0](https://www.nuget.org/packages/Microsoft.AspNetCore.App/2.2.0)
 - [Entity Framework](https://docs.microsoft.com/pt-br/dotnet/framework/data/adonet/ef/)
 
 ## Como rodar
