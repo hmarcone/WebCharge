@@ -34,6 +34,8 @@ export class PersonComponent implements OnInit {
       ? `${names[0]}${names[names.length-1]}`.toUpperCase()
       : names[0].toUpperCase();
 
+      this.initials = "CT";
+      
     this.personphoneService.read(this.person.businessEntityId).subscribe(response => {
       if (response.data.success) {
         this.personPhones = response.data.personPhoneObjects;
