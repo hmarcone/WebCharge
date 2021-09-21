@@ -9,7 +9,7 @@ namespace Examples.Charge.Domain.Aggregates.PersonAggregate
 {
     public class PhoneNumberType
     {
-        public int PhoneNumberTypeID { get; set; }
+        public int PhoneNumberTypeId { get; set; }
 
         public string Name { get; set; }
 

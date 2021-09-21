@@ -12,8 +12,8 @@ namespace Examples.Charge.Infra.Data.Configuration
 
             builder.ToTable("PersonPhone", "dbo").HasKey(t => new { t.BusinessEntityId, t.PhoneNumber, t.PhoneNumberTypeId });
 
-            builder.Property(t => t.BusinessEntityId).HasColumnName("BusinessEntityID").IsRequired(true);
-            builder.Property(t => t.PhoneNumberTypeId).HasColumnName("PhoneNumberTypeID").IsRequired(true);
+            builder.Property(t => t.BusinessEntityId).HasColumnName("BusinessEntityId").IsRequired(true);
+            builder.Property(t => t.PhoneNumberTypeId).HasColumnName("PhoneNumberTypeId").IsRequired(true);
             builder.Property(t => t.PhoneNumber).HasColumnName("PhoneNumber").IsRequired(true);
 
             builder.HasOne(t => t.PhoneNumberType);

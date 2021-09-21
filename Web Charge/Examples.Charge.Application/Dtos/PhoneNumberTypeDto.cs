@@ -2,7 +2,7 @@
 {
     public class PhoneNumberTypeDto
     {
-        public int PhoneNumberTypeID { get; set; }
+        public int PhoneNumberTypeId { get; set; }
         public string Name { get; set; }
     }
 }

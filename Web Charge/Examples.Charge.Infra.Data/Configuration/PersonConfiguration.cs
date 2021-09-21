@@ -10,13 +10,13 @@ namespace Examples.Charge.Infra.Data.Configuration
         {
             builder.Ignore(b => b.DomainEvents);
 
-            builder.ToTable("Person", "dbo").HasKey(t => t.BusinessEntityID);
+            builder.ToTable("Person", "dbo").HasKey(t => t.BusinessEntityId);
 
-            builder.Property(t => t.BusinessEntityID).HasColumnName("BusinessEntityID").IsRequired(true);
+            builder.Property(t => t.BusinessEntityId).HasColumnName("BusinessEntityId").IsRequired(true);
             builder.Property(t => t.Name).HasColumnName("Name").IsRequired(true);
             builder.HasMany(t => t.Phones).WithOne(t => t.Person);
 
-            builder.HasData(new Person { BusinessEntityID = 1, Name = "User One" });
+            builder.HasData(new Person { BusinessEntityId = 1, Name = "User One" });
         }
     }
 }

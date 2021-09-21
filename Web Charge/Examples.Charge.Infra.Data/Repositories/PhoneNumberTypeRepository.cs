@@ -35,7 +35,7 @@ namespace Examples.Charge.Infra.Data.Repositories
         {
             try
             {
-                return await Task.Run(() => _context.PhoneNumberType.FirstOrDefault(x => x.PhoneNumberTypeID == id));
+                return await Task.Run(() => _context.PhoneNumberType.FirstOrDefault(x => x.PhoneNumberTypeId == id));
             }
             catch (Exception ex)
             {

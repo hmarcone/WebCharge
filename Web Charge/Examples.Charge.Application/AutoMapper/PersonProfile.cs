@@ -10,7 +10,7 @@ namespace Examples.Charge.Application.AutoMapper
         {
             CreateMap<Person, PersonDto>()
                 .ReverseMap()
-                .ForMember(dest => dest.BusinessEntityID, opt => opt.MapFrom(src => src.BusinessEntityId))
+                .ForMember(dest => dest.BusinessEntityId, opt => opt.MapFrom(src => src.BusinessEntityId))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
         }
     }

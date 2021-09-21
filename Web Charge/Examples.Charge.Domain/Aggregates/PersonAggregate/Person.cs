@@ -8,7 +8,7 @@ namespace Examples.Charge.Domain.Aggregates.PersonAggregate
 {
     public class Person
     {
-        public int BusinessEntityID { get; set; }
+        public int BusinessEntityId { get; set; }
 
         public string Name { get; set; }
 

@@ -51,14 +51,14 @@ namespace Examples.Charge.API.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<PersonPhoneListResponse>> Delete(int businessEntityID, string phoneNumber, int phoneNumberTypeID) //=>
+        public async Task<ActionResult<PersonPhoneListResponse>> Delete(int businessEntityId, string phoneNumber, int phoneNumberTypeId) //=>
         {
             return Response(await _facade.RemoveAsync(
                 new PersonPhoneDto
                 {
-                    BusinessEntityId = businessEntityID,
+                    BusinessEntityId = businessEntityId,
                     PhoneNumber = phoneNumber,
-                    PhoneNumberTypeId = phoneNumberTypeID
+                    PhoneNumberTypeId = phoneNumberTypeId
                 }
             ));
 

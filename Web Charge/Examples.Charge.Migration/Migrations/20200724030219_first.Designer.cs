@@ -53,83 +53,83 @@ namespace Examples.Charge.Infra.Data.Configuration.Migrations
 
             modelBuilder.Entity("PGC.Charge.Domain.Aggregates.PersonAggregate.Person", b =>
                 {
-                    b.Property<int>("BusinessEntityID")
+                    b.Property<int>("BusinessEntityId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("BusinessEntityID")
+                        .HasColumnName("BusinessEntityId")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("Name");
 
-                    b.HasKey("BusinessEntityID");
+                    b.HasKey("BusinessEntityId");
 
                     b.ToTable("Person","dbo");
 
                     b.HasData(
                         new
                         {
-                            BusinessEntityID = 1,
+                            BusinessEntityId = 1,
                             Name = "User One"
                         });
                 });
 
             modelBuilder.Entity("PGC.Charge.Domain.Aggregates.PersonAggregate.PersonPhone", b =>
                 {
-                    b.Property<int>("BusinessEntityID")
-                        .HasColumnName("BusinessEntityID");
+                    b.Property<int>("BusinessEntityId")
+                        .HasColumnName("BusinessEntityId");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnName("PhoneNumber");
 
-                    b.Property<int>("PhoneNumberTypeID")
-                        .HasColumnName("PhoneNumberTypeID");
+                    b.Property<int>("PhoneNumberTypeId")
+                        .HasColumnName("PhoneNumberTypeId");
 
-                    b.HasKey("BusinessEntityID", "PhoneNumber", "PhoneNumberTypeID");
+                    b.HasKey("BusinessEntityId", "PhoneNumber", "PhoneNumberTypeId");
 
-                    b.HasIndex("PhoneNumberTypeID");
+                    b.HasIndex("PhoneNumberTypeId");
 
                     b.ToTable("PersonPhone","dbo");
 
                     b.HasData(
                         new
                         {
-                            BusinessEntityID = 1,
+                            BusinessEntityId = 1,
                             PhoneNumber = "(19)99999-2883",
-                            PhoneNumberTypeID = 1
+                            PhoneNumberTypeId = 1
                         },
                         new
                         {
-                            BusinessEntityID = 1,
+                            BusinessEntityId = 1,
                             PhoneNumber = "(19)99999-4021",
-                            PhoneNumberTypeID = 2
+                            PhoneNumberTypeId = 2
                         });
                 });
 
             modelBuilder.Entity("PGC.Charge.Domain.Aggregates.PersonAggregate.PhoneNumberType", b =>
                 {
-                    b.Property<int>("PhoneNumberTypeID")
+                    b.Property<int>("PhoneNumberTypeId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("BusinessEntityID")
+                        .HasColumnName("BusinessEntityId")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("Name");
 
-                    b.HasKey("PhoneNumberTypeID");
+                    b.HasKey("PhoneNumberTypeId");
 
                     b.ToTable("PhoneNumberType","dbo");
 
                     b.HasData(
                         new
                         {
-                            PhoneNumberTypeID = 1,
+                            PhoneNumberTypeId = 1,
                             Name = "Local phone"
                         },
                         new
                         {
-                            PhoneNumberTypeID = 2,
+                            PhoneNumberTypeId = 2,
                             Name = "Cellphone"
                         });
                 });
@@ -138,12 +138,12 @@ namespace Examples.Charge.Infra.Data.Configuration.Migrations
                 {
                     b.HasOne("PGC.Charge.Domain.Aggregates.PersonAggregate.Person", "Person")
                         .WithMany("Phones")
-                        .HasForeignKey("BusinessEntityID")
+                        .HasForeignKey("BusinessEntityId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("PGC.Charge.Domain.Aggregates.PersonAggregate.PhoneNumberType", "PhoneNumberType")
                         .WithMany()
-                        .HasForeignKey("PhoneNumberTypeID")
+                        .HasForeignKey("PhoneNumberTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

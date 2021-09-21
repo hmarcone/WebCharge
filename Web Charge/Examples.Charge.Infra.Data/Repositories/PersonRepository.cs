@@ -34,7 +34,7 @@ namespace Examples.Charge.Infra.Data.Repositories
         {
             try
             {
-                return await Task.Run(() => _context.Person.FirstOrDefault(x => x.BusinessEntityID == id));
+                return await Task.Run(() => _context.Person.FirstOrDefault(x => x.BusinessEntityId == id));
             }
             catch (Exception ex)
             {

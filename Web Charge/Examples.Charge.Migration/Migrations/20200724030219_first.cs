@@ -29,13 +29,13 @@ namespace Examples.Charge.Infra.Data.Configuration.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    BusinessEntityID = table.Column<int>(nullable: false)
+                    BusinessEntityId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Person", x => x.BusinessEntityID);
+                    table.PrimaryKey("PK_Person", x => x.BusinessEntityId);
                 });
 
             migrationBuilder.CreateTable(
@@ -43,13 +43,13 @@ namespace Examples.Charge.Infra.Data.Configuration.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    BusinessEntityID = table.Column<int>(nullable: false)
+                    BusinessEntityId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PhoneNumberType", x => x.BusinessEntityID);
+                    table.PrimaryKey("PK_PhoneNumberType", x => x.BusinessEntityId);
                 });
 
             migrationBuilder.CreateTable(
@@ -57,26 +57,26 @@ namespace Examples.Charge.Infra.Data.Configuration.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    BusinessEntityID = table.Column<int>(nullable: false),
+                    BusinessEntityId = table.Column<int>(nullable: false),
                     PhoneNumber = table.Column<string>(nullable: false),
-                    PhoneNumberTypeID = table.Column<int>(nullable: false)
+                    PhoneNumberTypeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PersonPhone", x => new { x.BusinessEntityID, x.PhoneNumber, x.PhoneNumberTypeID });
+                    table.PrimaryKey("PK_PersonPhone", x => new { x.BusinessEntityId, x.PhoneNumber, x.PhoneNumberTypeId });
                     table.ForeignKey(
-                        name: "FK_PersonPhone_Person_BusinessEntityID",
-                        column: x => x.BusinessEntityID,
+                        name: "FK_PersonPhone_Person_BusinessEntityId",
+                        column: x => x.BusinessEntityId,
                         principalSchema: "dbo",
                         principalTable: "Person",
-                        principalColumn: "BusinessEntityID",
+                        principalColumn: "BusinessEntityId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PersonPhone_PhoneNumberType_PhoneNumberTypeID",
-                        column: x => x.PhoneNumberTypeID,
+                        name: "FK_PersonPhone_PhoneNumberType_PhoneNumberTypeId",
+                        column: x => x.PhoneNumberTypeId,
                         principalSchema: "dbo",
                         principalTable: "PhoneNumberType",
-                        principalColumn: "BusinessEntityID",
+                        principalColumn: "BusinessEntityId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -94,13 +94,13 @@ namespace Examples.Charge.Infra.Data.Configuration.Migrations
             migrationBuilder.InsertData(
                 schema: "dbo",
                 table: "Person",
-                columns: new[] { "BusinessEntityID", "Name" },
+                columns: new[] { "BusinessEntityId", "Name" },
                 values: new object[] { 1, "User One" });
 
             migrationBuilder.InsertData(
                 schema: "dbo",
                 table: "PhoneNumberType",
-                columns: new[] { "BusinessEntityID", "Name" },
+                columns: new[] { "BusinessEntityId", "Name" },
                 values: new object[,]
                 {
                     { 1, "Local phone" },
@@ -110,20 +110,20 @@ namespace Examples.Charge.Infra.Data.Configuration.Migrations
             migrationBuilder.InsertData(
                 schema: "dbo",
                 table: "PersonPhone",
-                columns: new[] { "BusinessEntityID", "PhoneNumber", "PhoneNumberTypeID" },
+                columns: new[] { "BusinessEntityId", "PhoneNumber", "PhoneNumberTypeId" },
                 values: new object[] { 1, "(19)99999-2883", 1 });
 
             migrationBuilder.InsertData(
                 schema: "dbo",
                 table: "PersonPhone",
-                columns: new[] { "BusinessEntityID", "PhoneNumber", "PhoneNumberTypeID" },
+                columns: new[] { "BusinessEntityId", "PhoneNumber", "PhoneNumberTypeId" },
                 values: new object[] { 1, "(19)99999-4021", 2 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PersonPhone_PhoneNumberTypeID",
+                name: "IX_PersonPhone_PhoneNumberTypeId",
                 schema: "dbo",
                 table: "PersonPhone",
-                column: "PhoneNumberTypeID");
+                column: "PhoneNumberTypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
