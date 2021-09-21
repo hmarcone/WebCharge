@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Edit phone number</h1>
+<mat-dialog-content class="content">
+  <form [formGroup]="form">
+    <mat-form-field class="form-field">
+      <input name="phonenumber" formControlName="phoneNumber" placeholder="Número telefone" matInput required>
+      <mat-error>
+        Número do telefone é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Selecione o tipo de número de telefone</mat-label>
+      <mat-select (selectionChange)="selectOption($event.value)" [(value)]="selected">
+        <mat-option *ngFor="let phoneNumberType of phoneNumberTypes" [value]="phoneNumberType.phoneNumberTypeId">{{ phoneNumberType.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button color="success" (click)="confirm()">Salvar</button>
+</mat-dialog-actions>
