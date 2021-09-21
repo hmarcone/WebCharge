@@ -11,7 +11,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - AspNet 2.2 - netcoreapp2.2
 - [Entity Framework](https://docs.microsoft.com/pt-br/dotnet/framework/data/adonet/ef/)
 
-## How to run
+## Como rodar
 
 Clone o projeto e acesse sua pasta.
 
